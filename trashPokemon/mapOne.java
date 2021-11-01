@@ -6,16 +6,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MyWorld extends World
+public class mapOne extends World
 {
 
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
-    public MyWorld()
+    public mapOne()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(16*60, 9*60, 1);
+        super(960, 589, 1);
+    }
+    public void act()
+    {
+        //Start game if space bar is pressed
+        if (Greenfoot.isKeyDown("space")){
+            mapTwo gameWorld = new mapTwo();
+            Greenfoot.setWorld(gameWorld);
+        }
     }
 }
