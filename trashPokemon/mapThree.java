@@ -17,6 +17,12 @@ public class mapThree extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(960, 397, 1); 
+        
+        NextLevelBox nextLevel = new NextLevelBox(150, 50);
+        addObject(nextLevel, 475, 586);
+        
+        Player pc = new Player("Level Three");
+        addObject(pc, 800, 30);
     }
     public void act()
     {

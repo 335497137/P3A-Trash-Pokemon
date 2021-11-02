@@ -17,13 +17,15 @@ public class mapTwo extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(960, 586, 1); 
+        
+        NextLevelBox nextLevel = new NextLevelBox(400, 50);
+        addObject(nextLevel, 700, 586);
+        
+        Player pc = new Player("Level Two");
+        addObject(pc, 750, 40);
     }
     public void act()
     {
         //Start game if space bar is pressed
-        if (Greenfoot.isKeyDown("space")){
-            mapThree gameWorld = new mapThree();
-            Greenfoot.setWorld(gameWorld);
-        }
     }
 }
