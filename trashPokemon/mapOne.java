@@ -24,8 +24,6 @@ public class mapOne extends World
         ImpassableBox wall = new ImpassableBox (100,589);
         addObject(wall, 0,0);
         
-        
-        
         Player pc = new Player("Level One");
         addObject(pc, 430, 135);
 

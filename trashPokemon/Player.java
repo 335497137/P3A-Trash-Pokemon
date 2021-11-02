@@ -19,25 +19,25 @@ public class Player extends Actor
     {
         int x = 0;
         int y = 0;
-        if (Greenfoot.isKeyDown("right"))
+        if (Greenfoot.isKeyDown("right")||Greenfoot.isKeyDown("d"))
         {
             setRotation(0);
             setImage("trainer(right).png");
             x = 2;
         }
-        else if(Greenfoot.isKeyDown("down"))
+        else if(Greenfoot.isKeyDown("down")||Greenfoot.isKeyDown("s"))
         {
             setRotation(90);
             setImage("trainer(down).png");
             y = 2;
         }
-        else if(Greenfoot.isKeyDown("left"))
+        else if(Greenfoot.isKeyDown("left")||Greenfoot.isKeyDown("a"))
         {
             setRotation(180);
             setImage("trainer(left).png");
             x= -2;
         }
-        else if(Greenfoot.isKeyDown("up"))
+        else if(Greenfoot.isKeyDown("up")||Greenfoot.isKeyDown("w"))
         {
             setRotation(270);
             setImage("trainer(up).png");
