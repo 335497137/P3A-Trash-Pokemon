@@ -17,29 +17,35 @@ public class Player extends Actor
     }
     public void act()
     {
+        int x = 0;
+        int y = 0;
         if (Greenfoot.isKeyDown("right"))
         {
             setRotation(0);
             setImage("trainer(right).png");
-            move(3);
+            x = 2;
         }
         else if(Greenfoot.isKeyDown("down"))
         {
             setRotation(90);
             setImage("trainer(down).png");
-            move(3);
+            y = 2;
         }
         else if(Greenfoot.isKeyDown("left"))
         {
             setRotation(180);
             setImage("trainer(left).png");
-            move(3);
+            x= -2;
         }
         else if(Greenfoot.isKeyDown("up"))
         {
             setRotation(270);
             setImage("trainer(up).png");
-            move(3);
+            y= -2;
+        }
+        setLocation(getX()+x,getY()+y);
+        if(isTouching(ImpassableBox.class)){
+            setLocation(getX()-x,getY()-y);
         }
         nextWorld(curWorld);
     }
@@ -61,5 +67,4 @@ public class Player extends Actor
             }
         }
     }
-    
 }

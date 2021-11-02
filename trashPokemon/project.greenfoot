@@ -1,5 +1,4 @@
 #Greenfoot project file
-class.Player.image=trainer(initial).png
 class.mapOne.image=map1.png
 class.mapThree.image=map3.png
 class.mapTwo.image=map2.png
@@ -42,8 +41,8 @@ dependency9.to=mapOne
 dependency9.type=UsesDependency
 editor.fx.0.height=737
 editor.fx.0.width=814
-editor.fx.0.x=428
-editor.fx.0.y=170
+editor.fx.0.x=504
+editor.fx.0.y=52
 height=838
 package.numDependencies=12
 package.numTargets=8
