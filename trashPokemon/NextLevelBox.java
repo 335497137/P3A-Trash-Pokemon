@@ -6,9 +6,7 @@ import greenfoot.*;
  * @version (a version number or a date)
  */
 public class NextLevelBox extends Actor 
-{
-    private GreenfootImage boundingBoxDimensions;
-    
+{   
     public NextLevelBox(int width, int height)
     {
         GreenfootImage boundingBox = new GreenfootImage(width, height);

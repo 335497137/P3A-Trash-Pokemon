@@ -13,6 +13,7 @@ public class Player extends Actor
     public Player(String curWorld)
     {
         this.curWorld = curWorld;
+        setImage("player.initial");
     }
     public void act()
     {
