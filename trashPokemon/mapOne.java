@@ -26,7 +26,9 @@ public class mapOne extends World
         
         Player pc = new Player("Level One");
         addObject(pc, 430, 135);
-
+        
+        badGuy evilOne = new badGuy();
+        addObject(evilOne, 810, 135);
     }
     public void act()
     {

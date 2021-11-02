@@ -52,19 +52,20 @@ public class Player extends Actor
     
     public void nextWorld(String curWorld)
     {
-        if (isTouching(NextLevelBox.class))
-        {
+        if (isTouching(NextLevelBox.class)){
 
-            if (curWorld.equals("Level One"))
-            {
+            if (curWorld.equals("Level One")){
                 mapTwo gameWorld = new mapTwo();
                 Greenfoot.setWorld(gameWorld);
-            }
-            else if (curWorld.equals("Level Two"))
-            {
+            } else if (curWorld.equals("Level Two")){
                 mapThree gameWorld = new mapThree();
                 Greenfoot.setWorld(gameWorld);
             }
+        } 
+        if (isTouching(badGuy.class)){
+                battleWorld gameWorld = new battleWorld();
+                Greenfoot.setWorld(gameWorld);
         }
     }
 }
+
