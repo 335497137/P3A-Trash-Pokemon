@@ -20,10 +20,31 @@ public class mapOne extends World
         setBackground("map1.png");
         
         NextLevelBox nextLevel = new NextLevelBox(120, 25);
-        addObject(nextLevel, 740, 580);
+        //addObject(nextLevel, 740, 580);
         
-        ImpassableBox wall = new ImpassableBox (100,589);
-        addObject(wall, 0,0);
+        ImpassableBox leftWall = new ImpassableBox (130,650);
+        addObject(leftWall, 0,0);
+        
+        ImpassableBox firstLedge = new ImpassableBox (960,1);
+        addObject(firstLedge, 232,325);
+        
+        ImpassableBox top = new ImpassableBox (960,225);
+        addObject(top, getWidth()/2,0);
+        
+        ImpassableBox aboveBigTree = new ImpassableBox (250,100);
+        addObject(aboveBigTree, getWidth()/4-25,100);
+        
+        ImpassableBox bigTree = new ImpassableBox (150,100);
+        addObject(bigTree, getWidth()/4-40,150);
+
+        ImpassableBox nextToBad = new ImpassableBox (200,150);
+        addObject(nextToBad, getWidth()/4*3-50,100);
+        
+        ImpassableBox rightWall = new ImpassableBox (120,589);
+        addObject(rightWall, getWidth()-60,getHeight()/2);
+        
+        ImpassableBox bottomRightWall = new ImpassableBox (50,150);
+        addObject(bottomRightWall, getWidth()/8*7,getHeight()/8*7);
         
         Player pc = new Player("Level One");
         addObject(pc, 430, 135);

@@ -25,7 +25,6 @@ public class battleWorld extends World
         try
         {
             TextReader.readInto(hard, easy);
-            System.out.println("ran");
         } 
         catch(Exception e)
         {

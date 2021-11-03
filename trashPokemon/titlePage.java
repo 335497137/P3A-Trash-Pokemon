@@ -26,8 +26,8 @@ public class titlePage extends World
     public void act()
     {
         //Start game if space bar is pressed
-        if (Greenfoot.isKeyDown("space")){
-            mapOne gameWorld = new mapOne();
+        if ("space".equals(Greenfoot.getKey())){
+            instructions gameWorld = new instructions();
             Greenfoot.setWorld(gameWorld);
         }
     }
