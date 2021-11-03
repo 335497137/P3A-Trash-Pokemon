@@ -12,5 +12,6 @@ public class NextLevelBox extends Actor
         GreenfootImage boundingBox = new GreenfootImage(width, height);
         setImage(boundingBox);
         boundingBox.setColor(new Color(255,0,0));
+        boundingBox.fill();
     }
 }
