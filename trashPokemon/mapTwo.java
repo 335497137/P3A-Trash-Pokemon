@@ -17,7 +17,7 @@ public class mapTwo extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(960, 586, 1); 
-        
+        setBackground("map2.png");
         NextLevelBox nextLevel = new NextLevelBox(400, 50);
         addObject(nextLevel, 700, 586);
         

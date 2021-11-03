@@ -17,7 +17,9 @@ public class battleWorld extends World
     public battleWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(960, 576, 1); 
+        super(960, 576, 1);
+        setBackground("TestBackground.png");
+        
         ArrayList<String> hard = new ArrayList<String>();
         ArrayList<String> easy = new ArrayList<String>();
         try
@@ -29,8 +31,8 @@ public class battleWorld extends World
         {
             System.out.println("error");
         }
-        //Label test = new Label(hard.get(1), 25);
-        //addObject(test, 320, 50);
+        Label test = new Label(hard.get(3), 25);
+        addObject(test, 320, 50);
         
     }
     

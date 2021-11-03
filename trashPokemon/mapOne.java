@@ -17,6 +17,7 @@ public class mapOne extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(960, 589, 1);
+        setBackground("map1.png");
         
         NextLevelBox nextLevel = new NextLevelBox(120, 25);
         addObject(nextLevel, 740, 580);
