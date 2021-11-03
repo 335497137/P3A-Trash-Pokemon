@@ -23,25 +23,25 @@ public class Player extends Actor
         {
             setRotation(0);
             setImage("trainer(right).png");
-            x = 2;
+            x = 3;
         }
         else if(Greenfoot.isKeyDown("down")||Greenfoot.isKeyDown("s"))
         {
             setRotation(90);
             setImage("trainer(down).png");
-            y = 2;
+            y = 3;
         }
         else if(Greenfoot.isKeyDown("left")||Greenfoot.isKeyDown("a"))
         {
             setRotation(180);
             setImage("trainer(left).png");
-            x= -2;
+            x= -3;
         }
         else if(Greenfoot.isKeyDown("up")||Greenfoot.isKeyDown("w"))
         {
             setRotation(270);
             setImage("trainer(up).png");
-            y= -2;
+            y= -3;
         }
         setLocation(getX()+x,getY()+y);
         if(isTouching(ImpassableBox.class)){
