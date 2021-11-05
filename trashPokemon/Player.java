@@ -1,5 +1,5 @@
 import greenfoot.*;
-import java.util.List;
+import java.util.*;
 /**
  * Write a description of class Player here.
  * 
@@ -9,6 +9,10 @@ import java.util.List;
 public class Player extends Actor  
 {
     private String curWorld;
+    public static int[] curPos = {0,0};
+    public static boolean returning = false;
+    public static boolean firstEntry = true;
+    public static badGuy nameOfbadGuy;
     
     int moveX;
     int moveY;
@@ -124,9 +128,10 @@ public class Player extends Actor
         setImage(cur_frame_name);
         timer.mark();
     }
-    
     public void nextWorld(String curWorld){
         if(isTouching(NextLevelBox.class)){
+            
+            firstEntry = true;
             if(curWorld.equals("Level One")){
                 mapTwo gameWorld=new mapTwo();
                 Greenfoot.setWorld(gameWorld);
@@ -136,6 +141,10 @@ public class Player extends Actor
             }
         } 
         if(isTouching(badGuy.class)){
+            curPos[0] = getX(); // Store current X-offset
+            curPos[1] = getY(); // Store current Y-offset
+            nameOfbadGuy = (badGuy)(getOneIntersectingObject(badGuy.class));
+            returning = true;
             battleWorld gameWorld=new battleWorld();
             Greenfoot.setWorld(gameWorld);
         }

@@ -16,7 +16,7 @@ public class battleWorld extends World
     private Images bag = new Images("bagLabel.png", 72, 40);
     private Images moveOne = new Images("qAttack.png", 158, 38);
     private Images moveTwo = new Images("qAttack.png", 158, 38);
-    private Stack<Character> userInput = new Stack<Character>();
+    private Stack<String> userInput = new Stack<String>();
     private ArrayList<String> hard = new ArrayList<String>();
     private ArrayList<String> easy = new ArrayList<String>();
     private ArrayList<String> query = new ArrayList<String>();
@@ -24,7 +24,9 @@ public class battleWorld extends World
     private Label generatedWords;
     private Label winOrLoss = new Label ("",40);
     private String typed;
+    private String typed2;
     private String generated;
+    private String generated2;
     
     
     private boolean typing = false;
@@ -119,6 +121,7 @@ public class battleWorld extends World
                 removeObject(moveOne);
                 removeObject(moveTwo);
                 removeObject(select);
+                query.clear();
                 
                 if("enter".equals(key))
                 {
@@ -140,6 +143,10 @@ public class battleWorld extends World
                         {
                             String wordToAdd = easy.get(rand.nextInt(6492));
                             query.add(wordToAdd);
+                            if (i != 5)
+                            {
+                                query.add(" ");
+                            }
                         }
                     }
                     else
@@ -153,6 +160,10 @@ public class battleWorld extends World
                         {
                             String wordToAdd = hard.get(rand.nextInt(3404));
                             query.add(wordToAdd);
+                            if (i != 9)
+                            {
+                                query.add(" ");
+                            }
                         }
                     }
                     curAction = "typing";
@@ -169,7 +180,7 @@ public class battleWorld extends World
             
             addObject(box, 480, 465);
             addObject (generatedWords, getWidth()/2, getHeight()/4*3);
-            generated = (query.toString().replaceAll("\\[", "").replaceAll("]", "").replaceAll(",", ""));
+            generated = String.join("", query);
             generatedWords.setValue(generated);
             addObject (typedText, getWidth()/2, getHeight()/6*5);
             
@@ -182,13 +193,12 @@ public class battleWorld extends World
                     curAction = "checking";
                     key = null;
                 } else if(key != "space"){
-                    userInput.push(key.charAt(0));
+                    userInput.push(Character.toString(key.charAt(0)));
                 } else {
-                    userInput.push('_');
+                    userInput.push(Character.toString(' '));
                 }
-                typed = (userInput.toString().replaceAll("\\[", "").replaceAll("]", "").replaceAll(",", "").trim().replaceAll(" ", ""));
+                typed = String.join("", userInput);
                 typedText.setValue(typed);
-            //Main typing part
         }
     }
         
@@ -196,7 +206,7 @@ public class battleWorld extends World
                 typedText.setValue("");
                 generatedWords.setValue("");
                 addObject (winOrLoss, getWidth()/2, getHeight()/4*3);
-            if(generated.equals(typed.replaceAll("_", " "))){
+            if(generated.equals(typed)){
                 winOrLoss.setValue("You won. Press Enter to continue.");
                 if ("enter".equals(key)){
                     mapOne gameWorld = new mapOne();
