@@ -8,11 +8,14 @@ import java.util.*;
  */
 public class Player extends Actor  
 {
-    private String curWorld;
+    public static String curWorld;
+    public static int score = 0;
     public static int[] curPos = {0,0};
     public static boolean returning = false;
     public static boolean firstEntry = true;
     public static badGuy nameOfbadGuy;
+    public static int HP = 100;
+    public static int potions = 3;
     
     int moveX;
     int moveY;
@@ -29,9 +32,31 @@ public class Player extends Actor
         nextWorld(curWorld);
         
     }
-    
+    public static void adjustScore(int adjustment)
+    {
+        score += adjustment;
+    }
+    public static void startUp()
+    {
+        score = 0;
+        potions = 3;
+        firstEntry = true;
+        returning = false;
+        curPos[0] = 0;
+        curPos[1] = 0;
+        HP = 100;
+    }
     public void Move(int x, int y){
         setLocation(getX()+x, getY()+y);
+    }
+    public static void takeDamage()
+    {
+        HP -= 10;
+    }
+    public static void usePotion()
+    {
+        potions--;
+        HP = 100;
     }
     public void MovementControl(){
         boolean up = false, down = false, left = false, right = false;
@@ -74,14 +99,17 @@ public class Player extends Actor
             if(left_hit){x=Math.max(0,x);}
             if(right_hit){x=Math.min(0,x);}
         }
-        if(x==0 & y==0){
-            setImage("trainer(initial).png");
-        }else{
+        /**
+         * I think it looks better without resetting to intial image after
+         * movement. What do you guys think?
+        if(x==0 && y==0){
+            //setImage("trainer(initial).png");
+        }else{ */
             if(x>0){setImage("trainer(right).png");}
             else if(x<0){setImage("trainer(left).png");}
             if(y>0){SetAnimation("down");}
             else if(y<0){SetAnimation("up");}
-        }
+        //}
         Move(x,y);
     }
     
@@ -98,7 +126,6 @@ public class Player extends Actor
             else if(dir=="down"){return table[1];}
             else if(dir=="left"){return table[2];}
             else if(dir=="right"){return table[3];}
-            //STFU about the error
             int[]tmp={-1,-1};return tmp;
         }
         public void set(String dir, int[] tab){
