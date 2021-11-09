@@ -30,7 +30,7 @@ public class instructions extends World
     }
     public void act() {
         if ("space".equals(Greenfoot.getKey())){
-            mapOne gameWorld = new mapOne();
+            mapTwo gameWorld = new mapTwo();
             Greenfoot.setWorld(gameWorld);
         }
     }
